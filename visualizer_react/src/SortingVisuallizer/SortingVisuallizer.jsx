@@ -3,10 +3,10 @@ import "./SortingVisuallizer.css";
 import bubbleSort from "../SortingAlgorithm/bubbleSort.js";
 import InsertionSort from "../SortingAlgorithm/InsertionSort.js";
 import SelectionSort from "../SortingAlgorithm/SelectionSort.js";
+import CocktailSort from "../SortingAlgorithm/CocktailSort.js";
+import CombSort from "../SortingAlgorithm/CombSort.js";
+import GnomeSort from "../SortingAlgorithm/GnomeSort.js";
 const ANIMATION_SPEED_MS = 500;
-
-// Change this value for the number of bars (value) in the array.
-const NUMBER_OF_ARRAY_BARS = 8;
 
 // This is the main color of the array bars.
 const PRIMARY_COLOR = "turquoise";
@@ -30,7 +30,7 @@ export default class SortingVisuallizer extends React.Component {
   resetArray() {
     const array = [];
     for (let i = 0; i < 10; i++) {
-      array.push(randomIntFromInterval(5, 20));
+      array.push(randomIntFromInterval(5, 25));
     }
     this.setState({
       Randomarray: array
@@ -92,6 +92,18 @@ export default class SortingVisuallizer extends React.Component {
     let animation = SelectionSort(this.state.Randomarray);
     this.general_Animate(animation);
   };
+  CocktailSort_animate = () => {
+    let animation = CocktailSort(this.state.Randomarray);
+    this.general_Animate(animation);
+  };
+  CombSort_animate = () => {
+    let animation = CombSort(this.state.Randomarray);
+    this.general_Animate(animation);
+  };
+  GnomeSort_animate = () => {
+    let animation = GnomeSort(this.state.Randomarray);
+    this.general_Animate(animation);
+  };
   render() {
     return (
       <div className="array-container">
@@ -110,6 +122,11 @@ export default class SortingVisuallizer extends React.Component {
         <button onClick={() => this.heapSort()}>Heap Sort</button>
         <button onClick={() => this.selectionSort()}>Selection Sort</button>
         <button onClick={() => this.bubbleSort_animate()}>Bubble Sort</button>
+        <button onClick={() => this.CocktailSort_animate()}>
+          CocktailSort
+        </button>
+        <button onClick={() => this.CombSort_animate()}>Comb Sort</button>
+        <button onClick={() => this.GnomeSort_animate()}>Gnome Sort</button>
         <button onClick={() => this.InsertionSort_animate()}>
           Insertion Sort
         </button>
