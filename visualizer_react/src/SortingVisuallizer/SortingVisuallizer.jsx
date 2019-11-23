@@ -88,6 +88,16 @@ export default class SortingVisuallizer extends React.Component {
     let animation = InsertionSort(this.state.Randomarray);
     this.general_Animate(animation);
   };
+  shellSort_animate = () => {
+    console.log("shell");
+    let animation = shellSort(this.state.Randomarray);
+    console.log(animation);
+    this.general_Animate(animation);
+  };
+  oddEvenSort_animate = () => {
+    let animation = oddEvenSort(this.state.Randomarray);
+    this.general_Animate(animation);
+  };
   selectionSort = () => {
     let animation = SelectionSort(this.state.Randomarray);
     this.general_Animate(animation);
@@ -121,6 +131,8 @@ export default class SortingVisuallizer extends React.Component {
         <button onClick={() => this.quickSort()}>Quick Sort</button>
         <button onClick={() => this.heapSort()}>Heap Sort</button>
         <button onClick={() => this.selectionSort()}>Selection Sort</button>
+        <button onClick={() => this.shellSort_animate()}>Shell Sort</button>
+        <button onClick={() => this.oddEvenSort_animate()}>Odd-Even Sort</button>
         <button onClick={() => this.bubbleSort_animate()}>Bubble Sort</button>
         <button onClick={() => this.CocktailSort_animate()}>
           CocktailSort
