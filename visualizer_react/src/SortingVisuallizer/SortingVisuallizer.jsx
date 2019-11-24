@@ -10,7 +10,6 @@ const ANIMATION_SPEED_MS = 500;
 
 // This is the main color of the array bars.
 const PRIMARY_COLOR = "turquoise";
-
 // This is the color of array bars that are being compared throughout the animations.
 const SECONDARY_COLOR = "red";
 
@@ -132,7 +131,9 @@ export default class SortingVisuallizer extends React.Component {
         <button onClick={() => this.heapSort()}>Heap Sort</button>
         <button onClick={() => this.selectionSort()}>Selection Sort</button>
         <button onClick={() => this.shellSort_animate()}>Shell Sort</button>
-        <button onClick={() => this.oddEvenSort_animate()}>Odd-Even Sort</button>
+        <button onClick={() => this.oddEvenSort_animate()}>
+          Odd-Even Sort
+        </button>
         <button onClick={() => this.bubbleSort_animate()}>Bubble Sort</button>
         <button onClick={() => this.CocktailSort_animate()}>
           CocktailSort
