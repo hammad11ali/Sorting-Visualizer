@@ -6,6 +6,8 @@ import SelectionSort from "../SortingAlgorithm/SelectionSort.js";
 import CocktailSort from "../SortingAlgorithm/CocktailSort.js";
 import CombSort from "../SortingAlgorithm/CombSort.js";
 import GnomeSort from "../SortingAlgorithm/GnomeSort.js";
+import ShellSort from "../SortingAlgorithm/ShellSort.js";
+import oddEvenSort from "../SortingAlgorithm/oddEvenSort.js";
 const ANIMATION_SPEED_MS = 500;
 
 // This is the main color of the array bars.
@@ -89,7 +91,7 @@ export default class SortingVisuallizer extends React.Component {
   };
   shellSort_animate = () => {
     console.log("shell");
-    let animation = shellSort(this.state.Randomarray);
+    let animation = ShellSort(this.state.Randomarray);
     console.log(animation);
     this.general_Animate(animation);
   };

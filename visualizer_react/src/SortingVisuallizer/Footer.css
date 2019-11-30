@@ -1,0 +1,38 @@
+#label1 {
+    color: white;
+    margin: auto;
+    display: flex;
+    align-self: center;
+}
+#customRange1
+{
+    display: flex;
+    align-self: center;
+}
+
+.navbar button {
+    background: white;
+    padding: 4px 6px;
+    width: 100px;
+    font-weight: 600;
+    height: 33px;
+}
+
+#btn1
+{
+    margin-left: 20%;
+}
+
+
+#btn2
+{
+    width: 70px;
+    height: 33px;
+    margin-right: 20px;
+}
+#a
+{
+    margin: 0;
+    display: flex;
+    align-self: center;
+}
