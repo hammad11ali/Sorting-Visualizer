@@ -140,24 +140,14 @@ class GUI extends Component {
                     <button onClick={() => this.heapSort()}>Heap Sort</button>
                     <button onClick={() => this.selectionSort()}>Selection Sort</button>
                     <button onClick={() => this.shellSort_animate()}>Shell Sort</button>
-                    <button onClick={() => this.oddEvenSort_animate()}>
-                        Odd-Even Sort
-        </button>
+                    <button onClick={() => this.oddEvenSort_animate()}>Odd-Even Sort</button>
                     <button onClick={() => this.bubbleSort_animate()}>Bubble Sort</button>
-                    <button onClick={() => this.CocktailSort_animate()}>
-                        CocktailSort
-        </button>
+                    <button onClick={() => this.CocktailSort_animate()}>CocktailSort</button>
                     <button onClick={() => this.CombSort_animate()}>Comb Sort</button>
                     <button onClick={() => this.GnomeSort_animate()}>Gnome Sort</button>
-                    <button onClick={() => this.InsertionSort_animate()}>
-                        Insertion Sort
-        </button>
-                    <button onClick={() => this.testSortingAlgorithms()}>
-                        Test Sorting Algorithms (BROKEN)
-        </button>
+                    <button onClick={() => this.InsertionSort_animate()}>Insertion Sort</button>
+                    <button onClick={() => this.testSortingAlgorithms()}>Test Sorting Algorithms (BROKEN)</button>
                 </div>
-
-
 
                 <div>
                     <Footer />

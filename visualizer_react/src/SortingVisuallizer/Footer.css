@@ -12,22 +12,20 @@
 
 .navbar button {
     background: white;
-    padding: 4px 6px;
     width: 100px;
     font-weight: 600;
-    height: 33px;
+    padding: 3px 0px;
 }
 
 #btn1
 {
-    margin-left: 20%;
+    margin-left: 25%;
 }
 
 
 #btn2
 {
-    width: 70px;
-    height: 33px;
+    width: 80px;
     margin-right: 20px;
 }
 #a

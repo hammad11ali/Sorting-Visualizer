@@ -20,8 +20,14 @@ const navbar = props => (
                             <option value="">Merge Sort</option>
                             <option>Quick Sort</option>
                             <option>Quick Sort</option>
+                            <option>Heap Sort</option>
+                            <option>Selection Sort</option>
                             <option>Shell Sort</option>
+                            <option>Odd-Even Sort</option>
                             <option>Bubble Sort</option>
+                            <option>Cocktail Sort</option>
+                            <option>Comb Sort</option>
+                            <option>Gnome Sort</option>
                             <option>Insertion Sort</option>
                         </select>
                     </li>
