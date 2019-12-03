@@ -12,10 +12,13 @@ const footer = props => (
       <div>
         <input
           type="range"
-          className="custom-range"
-          id="customRange1"
-          min="0"
-          max="25"
+          className="Speed"
+          id="Speed"
+          min="500"
+          max="1500"
+          onInput={() =>
+            props.handleSpeedofArray(document.getElementById("Speed").value)
+          }
         ></input>
       </div>
 

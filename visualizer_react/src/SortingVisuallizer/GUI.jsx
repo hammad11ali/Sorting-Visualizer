@@ -10,7 +10,6 @@ import CombSort from "../SortingAlgorithm/CombSort.js";
 import GnomeSort from "../SortingAlgorithm/GnomeSort.js";
 import ShellSort from "../SortingAlgorithm/ShellSort.js";
 import oddEvenSort from "../SortingAlgorithm/oddEvenSort.js";
-const ANIMATION_SPEED_MS = 500;
 
 // This is the main color of the array bars.
 const PRIMARY_COLOR = "turquoise";
@@ -25,7 +24,8 @@ class GUI extends Component {
     super(props);
     this.state = {
       arraySize: 10,
-      Randomarray: []
+      Randomarray: [],
+      ANIMATION_SPEED_MS: 500
     };
   }
   componentDidMount() {
@@ -49,6 +49,12 @@ class GUI extends Component {
       arraySize: aSize
     });
     this.resetArray(aSize);
+  };
+  handleSpeed = speed => {
+    this.setState({
+      ANIMATION_SPEED_MS: speed
+    });
+    console.log(this.state.ANIMATION_SPEED_MS);
   };
   handleSort = index => {
     switch (index) {
@@ -110,13 +116,13 @@ class GUI extends Component {
       setTimeout(() => {
         array_bar[current[0]].style.backgroundColor = SECONDARY_COLOR;
         array_bar[current[1]].style.backgroundColor = SECONDARY_COLOR;
-      }, ANIMATION_SPEED_MS * j);
+      }, this.state.ANIMATION_SPEED_MS * j);
       j++;
       if (current[2]) {
         setTimeout(() => {
           array_bar[current[0]].style.backgroundColor = TERTIARY_COLOR;
           array_bar[current[1]].style.backgroundColor = TERTIARY_COLOR;
-        }, ANIMATION_SPEED_MS * j);
+        }, this.state.ANIMATION_SPEED_MS * j);
         j++;
         setTimeout(() => {
           let temp = array_bar[current[0]].innerHTML;
@@ -128,13 +134,13 @@ class GUI extends Component {
             .childNodes[0].innerHTML * 20}px`;
           array_bar[current[0]].style.backgroundColor = PRIMARY_COLOR;
           array_bar[current[1]].style.backgroundColor = PRIMARY_COLOR;
-        }, ANIMATION_SPEED_MS * j);
+        }, this.state.ANIMATION_SPEED_MS * j);
         j++;
       } else
         setTimeout(() => {
           array_bar[current[0]].style.backgroundColor = PRIMARY_COLOR;
           array_bar[current[1]].style.backgroundColor = PRIMARY_COLOR;
-        }, ANIMATION_SPEED_MS * j);
+        }, this.state.ANIMATION_SPEED_MS * j);
       j++;
     }
   }
@@ -193,7 +199,10 @@ class GUI extends Component {
           ))}
         </div>
         <div>
-          <Footer handleSize={this.handleArraySize} />
+          <Footer
+            handleSize={this.handleArraySize}
+            handleSpeedofArray={this.handleSpeed}
+          />
         </div>
       </div>
     );
@@ -203,13 +212,4 @@ export default GUI;
 
 function randomIntFromInterval(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
-}
-function arraysAreEqual(arrayOne, arrayTwo) {
-  if (arrayOne.length !== arrayTwo.length) return false;
-  for (let i = 0; i < arrayOne.length; i++) {
-    if (arrayOne[i] !== arrayTwo[i]) {
-      return false;
-    }
-  }
-  return true;
 }
