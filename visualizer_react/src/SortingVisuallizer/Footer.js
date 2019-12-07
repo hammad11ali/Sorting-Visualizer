@@ -46,7 +46,7 @@ class Footer extends Component {
           <div>
             <input
               type="range"
-              className="Speed"
+              className="Speed custom-range"
               id="Speed"
               min="500"
               max="1500"
