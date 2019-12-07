@@ -32,6 +32,12 @@ class GUI extends Component {
     this.resetArray(this.state.arraySize);
     this.handleArraySize(this.state.arraySize);
   }
+  setArray = arr => {
+    this.setState({
+      Randomarray: arr,
+      arraySize: arr.length
+    });
+  };
   resetArray = size => {
     const array = [];
     for (let i = 0; i < size; i++) {
@@ -54,7 +60,6 @@ class GUI extends Component {
     this.setState({
       ANIMATION_SPEED_MS: speed
     });
-    console.log(this.state.ANIMATION_SPEED_MS);
   };
   handleSort = index => {
     switch (index) {
@@ -79,6 +84,7 @@ class GUI extends Component {
       case 5:
         //bubble Sort
         this.bubbleSort_animate();
+        break;
       case 6:
         //Cocktail Sort
         this.CocktailSort_animate();
@@ -143,6 +149,9 @@ class GUI extends Component {
         }, this.state.ANIMATION_SPEED_MS * j);
       j++;
     }
+    setTimeout(() => {
+      window.alert("Complete");
+    }, this.state.ANIMATION_SPEED_MS * j);
   }
   bubbleSort_animate = () => {
     let animation = bubbleSort(this.state.Randomarray);
@@ -178,6 +187,10 @@ class GUI extends Component {
     let animation = GnomeSort(this.state.Randomarray);
     this.general_Animate(animation);
   };
+
+  setArray = arr => {
+    this.setState({ Randomarray: arr });
+  };
   render() {
     return (
       <div className="GUI">
@@ -200,6 +213,7 @@ class GUI extends Component {
         </div>
         <div>
           <Footer
+            handleSetArray={this.setArray}
             handleSize={this.handleArraySize}
             handleSpeedofArray={this.handleSpeed}
           />
