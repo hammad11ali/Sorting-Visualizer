@@ -30,16 +30,15 @@ const navbar = props => (
               className="form-control"
               placeholder="choose"
             >
-              {/* <option value="0">Merge Sort</option>
-              <option value="1">Quick Sort</option> */}
-              <option value="2">Selection Sort</option>
-              <option value="3">Shell Sort</option>
-              <option value="4">Odd-Even Sort</option>
-              <option value="5">Bubble Sort</option>
-              <option value="6">Cocktail Sort</option>
-              <option value="7">Comb Sort</option>
-              <option value="8">Gnome Sort</option>
-              <option value="9">Insertion Sort</option>
+              <option value="0">Merge Sort</option>
+              <option value="1">Selection Sort</option>
+              <option value="2">Shell Sort</option>
+              <option value="3">Odd-Even Sort</option>
+              <option value="4">Bubble Sort</option>
+              <option value="5">Cocktail Sort</option>
+              <option value="6">Comb Sort</option>
+              <option value="7">Gnome Sort</option>
+              <option value="8">Insertion Sort</option>
             </select>
           </li>
           <li>

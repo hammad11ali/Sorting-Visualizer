@@ -78,39 +78,37 @@ class GUI extends Component {
     switch (index) {
       case 0:
         //merge Sort
+        window.alert("Not Implemented");
         break;
       case 1:
-        //quick Sort
-        break;
-      case 2:
         //selection Sort
         this.selectionSort_animate();
         break;
-      case 3:
+      case 2:
         //shell Sort
         this.shellSort_animate();
         break;
-      case 4:
+      case 3:
         //odd-even Sort
         this.oddEvenSort_animate();
         break;
-      case 5:
+      case 4:
         //bubble Sort
         this.bubbleSort_animate();
         break;
-      case 6:
+      case 5:
         //Cocktail Sort
         this.CocktailSort_animate();
         break;
-      case 7:
+      case 6:
         //comb Sort
         this.CombSort_animate();
         break;
-      case 8:
+      case 7:
         //gnome Sort
         this.GnomeSort_animate();
         break;
-      case 9:
+      case 8:
         //insertion Sort
         this.InsertionSort_animate();
         break;
