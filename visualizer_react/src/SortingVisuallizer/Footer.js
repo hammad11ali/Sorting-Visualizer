@@ -77,11 +77,9 @@ class Footer extends Component {
               }
             ></input>
           </div>
-
           <button onClick={this.setCustom} id="btn1" className="btn">
             Custom
           </button>
-
           <div
             id="a"
             style={{ display: this.state.custom }}

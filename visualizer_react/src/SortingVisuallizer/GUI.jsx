@@ -33,10 +33,21 @@ class GUI extends Component {
     this.handleArraySize(this.state.arraySize);
   }
   setArray = arr => {
-    this.setState({
-      Randomarray: arr,
-      arraySize: arr.length
-    });
+    this.setState(
+      {
+        Randomarray: arr,
+        arraySize: arr.length
+      },
+      this.handleArrayChange
+    );
+  };
+  handleArrayChange = () => {
+    let array_bar = document.getElementsByClassName("array-bar");
+    for (let i = 0; i < this.state.Randomarray.length; i++) {
+      array_bar[i].childNodes[0].innerHTML = this.state.Randomarray[i];
+      array_bar[i].style.height = `${this.state.Randomarray[i] * 20}px`;
+    }
+    document.getElementById("custom-range").value = this.arraySize - 3;
   };
   resetArray = size => {
     const array = [];
@@ -51,10 +62,12 @@ class GUI extends Component {
     this.resetArray(this.state.arraySize);
   };
   handleArraySize = aSize => {
-    this.setState({
-      arraySize: aSize
-    });
-    this.resetArray(aSize);
+    this.setState(
+      {
+        arraySize: aSize
+      },
+      this.resetArray(aSize)
+    );
   };
   handleSpeed = speed => {
     this.setState({
@@ -188,9 +201,6 @@ class GUI extends Component {
     this.general_Animate(animation);
   };
 
-  setArray = arr => {
-    this.setState({ Randomarray: arr });
-  };
   render() {
     return (
       <div className="GUI">
