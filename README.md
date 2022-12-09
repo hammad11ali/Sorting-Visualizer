@@ -3,10 +3,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Visuals
 ![Visualization of the codebase](./diagram.svg)
 
-
 ## Available Scripts
-
-In the project directory, you can run:
+This should update
+In the project directory, you can run: 
 
 ### `yarn start`
 
