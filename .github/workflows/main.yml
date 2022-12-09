@@ -1,29 +1,16 @@
-# action to perform Visualization of the codebase using github repo-visualizer
-
-name: Repo-Visualizer
-
+name: Create Vizualizing Codebase Diagram
 on:
+  workflow_dispatch: {}
   push:
     branches:
-      - master
-  pull_request:
-    branches:
-      - master
-
+      - main
 jobs:
-  build:
+  get_data:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Repo-Visualizer
-        uses:
-
-@githubocto/repo-visualizer-action@v1
-  
-          with:
-            token: ${{ secrets.GITHUB_TOKEN }}
-            # Optional: If you want to use a custom branch name
-            # branch: my-branch-name
-
-# Path: .github\workflows\main.yml
-# action to perform Visualization of the codebase using github repo-visualizer
+      - name: Checkout code
+        uses: actions/checkout@master
+      - name: Update diagram
+        uses: githubocto/repo-visualizer@main
+        with:
+          excluded_paths: "ignore,.github"
